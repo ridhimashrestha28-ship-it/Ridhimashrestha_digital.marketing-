@@ -1,1 +1,241 @@
-<h1>  hello people of bmc     </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sprinkled Whisk | Sweet Treats</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff85a2;
+            --soft-yellow: #f9f7cf;
+            --mint-green: #b2f7ef;
+            --berry-purple: #7b2cbf;
+            --cream: #fff9f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--cream);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: 'Cherry Bomb One', cursive;
+            font-size: 2rem;
+            color: var(--primary-pink);
+            text-shadow: 2px 2px var(--soft-yellow);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-pink);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(135deg, var(--mint-green), var(--soft-yellow));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cherry Bomb One', cursive;
+            font-size: 4.5rem;
+            color: white;
+            text-shadow: 4px 4px var(--primary-pink);
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .btn {
+            background: var(--primary-pink);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 133, 162, 0.6);
+        }
+
+        /* --- Menu Section --- */
+        .menu-section {
+            padding: 5rem 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-family: 'Cherry Bomb One', cursive;
+            font-size: 3rem;
+            color: var(--berry-purple);
+            margin-bottom: 3rem;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--mint-green);
+        }
+
+        .card-emoji {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-pink);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--berry-purple);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .socials {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Sprinkled Whisk</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#contact">Visit Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Happiness is <br>Homemade</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 2rem; color: #666;">Freshly baked treats delivered to your soul.</p>
+            <a href="#menu" class="btn">View Menu</a>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <h2 class="section-title">Fresh from the Oven</h2>
+        <div class="menu-grid">
+            <div class="card">
+                <div class="card-emoji">🧁</div>
+                <h3>Cloud Cupcakes</h3>
+                <p>Light, fluffy, and topped with our signature pastel buttercream.</p>
+            </div>
+            <div class="card">
+                <div class="card-emoji">🥐</div>
+                <h3>Golden Croissants</h3>
+                <p>Buttery layers that shatter perfectly with every single bite.</p>
+            </div>
+            <div class="card">
+                <div class="card-emoji">🍩</div>
+                <h3>Magic Donuts</h3>
+                <p>Hand-glazed rings of joy with colorful sprinkles on top.</p>
+            </div>
+            <div class="card">
+                <div class="card-emoji">🍰</div>
+                <h3>Velvet Cakes</h3>
+                <p>Rich, decadent layers for the most special celebrations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" style="padding: 5rem 10%; background: var(--soft-yellow); text-align: center;">
+        <h2 class="section-title">Why We Bake?</h2>
+        <p style="max-width: 700px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
+            At <strong>The Sprinkled Whisk</strong>, we believe that sugar and flour are just the beginning. 
+            We mix every batch with a pinch of magic and a whole lot of love. Our ingredients are locally sourced, 
+            and our recipes have been passed down through generations—with a modern, colorful twist!
+        </p>
+    </section>
+
+    <footer id="contact">
+        <h3>The Sprinkled Whisk</h3>
+        <p>123 Sugar Lane, Sweet City, SC 56789</p>
+        <p>Open Daily: 7 AM - 8 PM</p>
+        <div class="socials">
+            ✨ 🍩 🍰 🥐 ✨
+        </div>
+        <p style="margin-top: 2rem; opacity: 0.7; font-size: 0.8rem;">&copy; 2026 The Sprinkled Whisk. All rights baked.</p>
+    </footer>
+
+</body>
+</html>
