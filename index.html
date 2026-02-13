@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Sprinkled Whisk | Sweet Treats</title>
+    <title>Petals & Pastries | Floral Bakery</title>
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-pink: #ff85a2;
             --soft-yellow: #f9f7cf;
-            --mint-green: #b2f7ef;
-            --berry-purple: #7b2cbf;
+            --leaf-green: #89ce94;
+            --berry-purple: #7d5ba6;
             --cream: #fff9f0;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -27,215 +27,252 @@
             overflow-x: hidden;
         }
 
-        /* --- Navigation --- */
-        nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        /* --- Header & Nav --- */
+        header {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .logo {
+        h1 {
             font-family: 'Cherry Bomb One', cursive;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--primary-pink);
-            text-shadow: 2px 2px var(--soft-yellow);
+            letter-spacing: 2px;
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
+        nav {
+            margin-top: 10px;
         }
 
-        .nav-links a {
+        nav a {
+            margin: 0 15px;
             text-decoration: none;
-            color: #555;
+            color: var(--berry-purple);
             font-weight: 600;
-            transition: color 0.3s;
+            transition: 0.3s;
         }
 
-        .nav-links a:hover {
+        nav a:hover {
             color: var(--primary-pink);
         }
 
         /* --- Hero Section --- */
         .hero {
-            height: 80vh;
-            background: linear-gradient(135deg, var(--mint-green), var(--soft-yellow));
+            height: 400px;
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                        url('https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 2rem;
-            position: relative;
+            padding: 20px;
         }
 
-        .hero-content h1 {
-            font-family: 'Cherry Bomb One', cursive;
-            font-size: 4.5rem;
-            color: white;
-            text-shadow: 4px 4px var(--primary-pink);
-            margin-bottom: 1rem;
-            animation: bounce 2s infinite;
+        .hero h2 {
+            font-size: 3rem;
+            color: var(--berry-purple);
+            text-shadow: 2px 2px white;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .btn {
-            background: var(--primary-pink);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
-            box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
-        }
-
-        .btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(255, 133, 162, 0.6);
-        }
-
-        /* --- Menu Section --- */
-        .menu-section {
-            padding: 5rem 10%;
-            text-align: center;
+        /* --- Shop Section --- */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         .section-title {
-            font-family: 'Cherry Bomb One', cursive;
-            font-size: 3rem;
-            color: var(--berry-purple);
-            margin-bottom: 3rem;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: var(--primary-pink);
+            position: relative;
         }
 
-        .menu-grid {
+        .section-title::after {
+            content: '🌸';
+            display: block;
+            font-size: 1.2rem;
+        }
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
         .card {
             background: white;
-            padding: 1.5rem;
             border-radius: 20px;
+            overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             transition: transform 0.3s;
-            border: 3px solid transparent;
+            border: 2px solid transparent;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            border-color: var(--mint-green);
+            border-color: var(--soft-yellow);
         }
 
-        .card-emoji {
-            font-size: 4rem;
-            margin-bottom: 1rem;
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .card h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-pink);
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .price {
+            display: block;
+            font-weight: bold;
+            color: var(--leaf-green);
+            font-size: 1.3rem;
+            margin: 10px 0;
+        }
+
+        .btn {
+            background-color: var(--primary-pink);
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--berry-purple);
         }
 
         /* --- Footer --- */
         footer {
             background: var(--berry-purple);
             color: white;
-            padding: 3rem;
             text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
         }
 
-        .socials {
-            margin-top: 1rem;
-            font-size: 1.5rem;
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-        }
+        .badge-flower { background: #ffe3ec; color: #ff4d8d; }
+        .badge-bakery { background: #fff4e0; color: #d4a373; }
+
     </style>
 </head>
 <body>
 
+<header>
+    <h1>Petals & Pastries</h1>
     <nav>
-        <div class="logo">Sprinkled Whisk</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">Our Story</a></li>
-            <li><a href="#contact">Visit Us</a></li>
-        </ul>
+        <a href="#flowers">Fresh Blooms</a>
+        <a href="#bakery">Sweet Treats</a>
+        <a href="#about">Our Story</a>
     </nav>
+</header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Happiness is <br>Homemade</h1>
-            <p style="font-size: 1.5rem; margin-bottom: 2rem; color: #666;">Freshly baked treats delivered to your soul.</p>
-            <a href="#menu" class="btn">View Menu</a>
-        </div>
-    </section>
+<section class="hero">
+    <h2>Where Flowers Bloom & Flavors Swirl</h2>
+    <p>Hand-picked bouquets and oven-fresh delights delivered to your door.</p>
+</section>
 
-    <section class="menu-section" id="menu">
-        <h2 class="section-title">Fresh from the Oven</h2>
-        <div class="menu-grid">
-            <div class="card">
-                <div class="card-emoji">🧁</div>
-                <h3>Cloud Cupcakes</h3>
-                <p>Light, fluffy, and topped with our signature pastel buttercream.</p>
-            </div>
-            <div class="card">
-                <div class="card-emoji">🥐</div>
-                <h3>Golden Croissants</h3>
-                <p>Buttery layers that shatter perfectly with every single bite.</p>
-            </div>
-            <div class="card">
-                <div class="card-emoji">🍩</div>
-                <h3>Magic Donuts</h3>
-                <p>Hand-glazed rings of joy with colorful sprinkles on top.</p>
-            </div>
-            <div class="card">
-                <div class="card-emoji">🍰</div>
-                <h3>Velvet Cakes</h3>
-                <p>Rich, decadent layers for the most special celebrations.</p>
+<div class="container" id="flowers">
+    <h2 class="section-title">Fresh From The Garden</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=500&q=60" alt="Roses">
+            <div class="card-content">
+                <span class="badge badge-flower">Floral</span>
+                <h3>Blush Rose Bouquet</h3>
+                <span class="price">$35.00</span>
+                <button class="btn" onclick="order('Blush Rose Bouquet')">Add to Basket</button>
             </div>
         </div>
-    </section>
-
-    <section id="about" style="padding: 5rem 10%; background: var(--soft-yellow); text-align: center;">
-        <h2 class="section-title">Why We Bake?</h2>
-        <p style="max-width: 700px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
-            At <strong>The Sprinkled Whisk</strong>, we believe that sugar and flour are just the beginning. 
-            We mix every batch with a pinch of magic and a whole lot of love. Our ingredients are locally sourced, 
-            and our recipes have been passed down through generations—with a modern, colorful twist!
-        </p>
-    </section>
-
-    <footer id="contact">
-        <h3>The Sprinkled Whisk</h3>
-        <p>123 Sugar Lane, Sweet City, SC 56789</p>
-        <p>Open Daily: 7 AM - 8 PM</p>
-        <div class="socials">
-            ✨ 🍩 🍰 🥐 ✨
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1525310238806-e13d330b615a?auto=format&fit=crop&w=500&q=60" alt="Spring Mix">
+            <div class="card-content">
+                <span class="badge badge-flower">Floral</span>
+                <h3>Wildflower Dream</h3>
+                <span class="price">$28.00</span>
+                <button class="btn" onclick="order('Wildflower Dream')">Add to Basket</button>
+            </div>
         </div>
-        <p style="margin-top: 2rem; opacity: 0.7; font-size: 0.8rem;">&copy; 2026 The Sprinkled Whisk. All rights baked.</p>
-    </footer>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=500&q=60" alt="Sunflowers">
+            <div class="card-content">
+                <span class="badge badge-flower">Floral</span>
+                <h3>Sunny Morning</h3>
+                <span class="price">$24.00</span>
+                <button class="btn" onclick="order('Sunny Morning')">Add to Basket</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="bakery" style="margin-top: 80px;">
+    <h2 class="section-title">Baked with Love</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=500&q=60" alt="Cake">
+            <div class="card-content">
+                <span class="badge badge-bakery">Bakery</span>
+                <h3>Velvet Ganache Cake</h3>
+                <span class="price">$42.00</span>
+                <button class="btn" onclick="order('Velvet Ganache Cake')">Add to Basket</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=60" alt="Croissants">
+            <div class="card-content">
+                <span class="badge badge-bakery">Bakery</span>
+                <h3>Golden Croissants (4pk)</h3>
+                <span class="price">$12.00</span>
+                <button class="btn" onclick="order('Golden Croissants')">Add to Basket</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=500&q=60" alt="Cupcakes">
+            <div class="card-content">
+                <span class="badge badge-bakery">Bakery</span>
+                <h3>Lavender Cupcakes</h3>
+                <span class="price">$18.00</span>
+                <button class="btn" onclick="order('Lavender Cupcakes')">Add to Basket</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Petals & Pastries Co. | Sweetness in Every Bloom</p>
+    <p style="font-size: 0.8rem; margin-top: 10px;">123 Garden Lane, Flour City</p>
+</footer>
+
+<script>
+    function order(itemName) {
+        alert("✨ Excellent choice! The '" + itemName + "' has been added to your basket. ✨");
+    }
+</script>
 
 </body>
 </html>
